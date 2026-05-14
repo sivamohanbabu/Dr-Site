@@ -1,0 +1,35 @@
+# Dr Ranjith Neuro
+> Neurology clinic website for consultation, diagnostics, and condition-specific neurological care in Hyderabad.
+
+## Canonical
+- Website: https://drranjithneuro.com/
+- Sitemap: https://drranjithneuro.com/sitemap.xml
+
+## Key Pages
+- Home: https://drranjithneuro.com/
+- Our Doctor: https://drranjithneuro.com/our-doctor
+- Services: https://drranjithneuro.com/services
+- Blogs: https://drranjithneuro.com/blogs
+- Contact: https://drranjithneuro.com/contact
+- Book Appointment: https://drranjithneuro.com/book-appointment
+
+## Conditions And Services
+- Stroke care: https://drranjithneuro.com/stroke-diagnosis-hyderabad
+- Epilepsy and seizure care: https://drranjithneuro.com/epilepsy-seizure-disorder-care-hyderabad
+- Headache and migraine: https://drranjithneuro.com/headache-and-migraine-hyderabad
+- Parkinson's and movement disorders: https://drranjithneuro.com/parkinsons-movementdisorders-hyderabad
+- Multiple sclerosis: https://drranjithneuro.com/multiple-sclerosis-related-disorders-hyderabad
+- Neuroinfection management: https://drranjithneuro.com/neuroinfection-management
+
+## Featured Blog Articles
+- Medical tourism neurology stroke care India: https://drranjithneuro.com/medical-tourism-neurology-stroke-care-india
+- Telehealth neurology stroke care: https://drranjithneuro.com/telehealth-neurology-stroke-care
+
+## Contact
+- Email: ranjith.g554@gmail.com
+- Phone: +91 98489 99917, +91 99080 23222
+- Address: AB Neuro Centre, Second Floor, Sy No 140, Block-A, Plot No 14, No 5/1/14/1/G1, Above HDFC Bank ATM, Alkapuri, near Neknampur, Mahalneknapur, Gandipet, Manikonda, Hyderabad, Telangana 500089
+
+## Important Note
+- Content is informational and not a substitute for emergency or personalized medical advice.
+

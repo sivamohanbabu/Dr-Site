@@ -1,0 +1,256 @@
+body {
+  margin: 0;
+}
+
+.clinic {
+  text-align: left;
+  padding: 15px 5%;
+
+  background: transparent;
+  display: flex;
+  justify-content: center;
+}
+
+.clinic {
+  width: 100%;
+  max-width: 1200px; /* ✅ keeps layout neat on big screens */
+}
+
+.clinic {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 15px;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-x: auto;
+  scrollbar-width: none; /* hide scrollbar (Firefox) */
+}
+
+.clinic::-webkit-scrollbar {
+  display: none; /* hide scrollbar (Chrome, Safari) */
+}
+
+.clinic a {
+  text-decoration: none;
+  color: #201c1c;
+  font-weight: 400;
+  font-size: 16px;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+@media (max-width: 600px) {
+  .clinic {
+    padding: 15px;
+  }
+
+  .clinic {
+    gap: 20px;
+  }
+}
+.clinic {
+  display: flex;
+  justify-content: center;
+}
+.clinic {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.policy-container body {
+  background-color: #f9f9f9;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+.policy-container {
+  max-width: 1100px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.policy-container h2 {
+  color: #27292c;
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+.policy-container h3 {
+  color: #222;
+  margin-top: 25px;
+}
+p,
+li {
+  line-height: 1.6;
+  font-size: 16px;
+}
+ul {
+  margin-left: 20px;
+}
+a {
+  color: #004aad;
+  text-decoration: none;
+}
+
+.procedures-container {
+  overflow: hidden;
+  margin: 0 -15px;
+}
+.procedures-slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 20px;
+  padding: 20px;
+  scrollbar-width: thin;
+  scrollbar-color: #999 transparent;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+}
+.procedures-slider::-webkit-scrollbar {
+  height: 8px;
+}
+.procedures-slider::-webkit-scrollbar-thumb {
+  background: #aaa;
+  border-radius: 4px;
+}
+.procedures-slider::-webkit-scrollbar-track {
+  background: transparent;
+}
+.procedure-item {
+  flex: 0 0 300px;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  scroll-snap-align: start;
+}
+.procedure-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+.procedure-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+.procedure-content {
+  padding: 15px;
+  text-align: center;
+}
+.procedure-content h3 {
+  font-size: 18px;
+  color: #222;
+  margin-bottom: 10px;
+}
+.procedure-content h3 a {
+  color: #222;
+  text-decoration: none;
+  display: block;
+}
+.procedure-content h3 a:hover {
+  color: #007bff;
+} /* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .page-services .container h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    padding: 0 10px;
+  }
+  .procedures-container {
+    margin: 0 -10px;
+  }
+  .procedures-slider {
+    padding: 15px 10px;
+    gap: 15px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .procedure-item {
+    flex: 0 0 calc(100vw - 40px);
+    min-width: calc(100vw - 40px);
+    max-width: calc(100vw - 40px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  .procedure-item img {
+    height: 200px;
+  }
+  .procedure-content {
+    padding: 15px;
+  }
+  .procedure-content h3 {
+    font-size: 18px;
+    line-height: 1.3;
+    margin-bottom: 8px;
+  }
+  .procedure-content h3 a {
+    font-weight: 500;
+  }
+}
+@media (max-width: 480px) {
+  .page-services .container h2 {
+    font-size: 20px;
+    margin-bottom: 12px;
+    padding: 0 5px;
+  }
+  .procedures-container {
+    margin: 0 -5px;
+  }
+  .procedures-slider {
+    padding: 10px 5px;
+    gap: 10px;
+  }
+  .procedure-item {
+    flex: 0 0 calc(100vw - 20px);
+    min-width: calc(100vw - 20px);
+    max-width: calc(100vw - 20px);
+  }
+  .procedure-item img {
+    height: 180px;
+  }
+  .procedure-content {
+    padding: 12px;
+  }
+  .procedure-content h3 {
+    font-size: 16px;
+    line-height: 1.2;
+  }
+  .procedure-content h3 a {
+    font-weight: 500;
+  }
+}
+@media (max-width: 360px) {
+  .page-services .container h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    padding: 0 5px;
+  }
+  .procedure-item {
+    flex: 0 0 calc(100vw - 20px);
+    min-width: calc(100vw - 20px);
+    max-width: calc(100vw - 20px);
+  }
+  .procedure-item img {
+    height: 160px;
+  }
+  .procedure-content h3 {
+    font-size: 15px;
+    line-height: 1.1;
+  }
+  .procedure-content h3 a {
+    font-weight: 500;
+  }
+}
+/* Sticky Header for FAQs Page Only - Keep same appearance */
+.r-sticky-header .header-sticky {
+  position: fixed !important;
+  top: 0;
+
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: white;
+}

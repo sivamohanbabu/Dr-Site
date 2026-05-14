@@ -1,0 +1,250 @@
+.simple-slider {
+  position: relative;
+  width: 100%;
+  height: 700px;
+  overflow: hidden;
+}
+
+.simple-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.simple-slide.active {
+  opacity: 1;
+}
+
+.slider-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  pointer-events: none; /* allow clicks to reach button below */
+}
+
+.slider-content {
+  position: absolute;
+  top: 50%;
+  left: 4%;
+  transform: translateY(-50%);
+  color: #fff;
+  max-width: 600px;
+  z-index: 2; /* above overlay so link is clickable */
+}
+
+.slider-content h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.slider-content p {
+  font-size: 20px;
+  margin-bottom: 25px;
+}
+
+.slider-content a {
+  display: inline-block;
+  padding: 12px 28px;
+  background: rgb(42, 101, 172);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 20px;
+  font-weight: 600;
+  margin-top: 30px;
+}
+.slider-contentbt {
+  margin-top: 70px;
+}
+
+/* Hero slider navigation buttons (desktop & mobile) */
+.slider-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgb(42, 101, 172); /* purple like reference banner */
+  color: #fff;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.slider-prev {
+  left: 12px;
+}
+
+.slider-next {
+  right: 12px;
+}
+
+.slider-nav:focus {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+.slider-nav:hover {
+  background-color: #49d5da;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .simple-slider {
+    height: 520px;
+  }
+
+  .slider-content {
+    left: 5%;
+    right: 5%;
+  }
+
+  .slider-content h1 {
+    font-size: 28px;
+  }
+  .slider-content h5 {
+    margin-top: 50px;
+  }
+  .slider-content p {
+    font-size: 16px;
+  }
+
+  /* Make doctor heading mobile-friendly */
+  .doctor-name {
+    font-size: 44px;
+  }
+
+  .doctor-degree {
+    font-size: 16px;
+  }
+
+  /* Hide long fellowship line on small screens */
+  .doctor-fellowship {
+    display: none;
+  }
+
+  /* Center first banner background image nicely on mobile */
+  .slide-1 {
+    background-position: 85%;
+  }
+
+  /* Slightly smaller nav buttons and a bit lower in mobile view */
+  .slider-nav {
+    width: 20px;
+    height: 20px;
+    font-size: 18px;
+  }
+
+  .slider-prev,
+  .slider-next {
+    top: 50%;
+  }
+}
+
+.doctor-title {
+  line-height: 1.3;
+}
+
+.doctor-name {
+  font-size: 48px;
+  font-weight: 700;
+  color: rgb(128, 214, 241);
+}
+
+.doctor-degree {
+  font-size: 34px;
+  font-weight: 500;
+}
+
+.doctor-fellowship {
+  font-size: 34px;
+  font-weight: 500;
+}
+.doctor-fellowships {
+  font-size: 48px;
+  font-weight: 500;
+  color: rgb(128, 214, 241);
+}
+
+/* Slide 1: single content only – desktop shows desktop block, mobile shows mobile block */
+.slide-1 .slider-content-desktop {
+  display: block;
+}
+.slide-1 .slider-content-mobile {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  left: -9999px !important;
+}
+
+@media (max-width: 768px) {
+  .slide-1 .slider-content-desktop {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    pointer-events: none !important;
+    position: absolute !important;
+    left: -9999px !important;
+  }
+  .slide-1 .slider-content-mobile {
+    display: flex !important;
+    visibility: visible !important;
+    height: auto !important;
+    position: absolute !important;
+    left: 6% !important;
+    right: 6%;
+    top: 50%;
+    transform: translateY(-50%);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: none;
+    gap: 6px;
+  }
+  .slider-mobile-name {
+    font-size: 32px;
+    font-weight: 700;
+    color: rgb(128, 214, 241);
+    margin: 0 0 4px 0;
+    line-height: 1.2;
+  }
+  .slider-mobile-degree {
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    margin: 0;
+    line-height: 1.4;
+  }
+  .slider-mobile-fellowship {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.95);
+    margin: 0;
+    line-height: 1.4;
+  }
+  .slider-mobile-specialty {
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.95);
+    margin: 0 0 16px 0;
+    line-height: 1.3;
+  }
+  .slider-content-mobile .btn-default {
+    margin-top: 8px;
+    padding: 10px 22px;
+    font-size: 15px;
+  }
+}

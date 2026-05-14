@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+Disallow: /cgi-bin/
+
+# AI crawler policies (kept open for discoverability)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Host: drranjithneuro.com
+Sitemap: https://drranjithneuro.com/sitemap.xml
+# LLMs reference file
+# https://drranjithneuro.com/llms.txt
