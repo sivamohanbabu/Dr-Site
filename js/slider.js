@@ -9,6 +9,9 @@ function showSlide(newIndex) {
 
   slides[index].classList.remove("active");
   index = (newIndex + slides.length) % slides.length;
+  if (slides[index].dataset.bg && !slides[index].style.backgroundImage) {
+    slides[index].style.backgroundImage = `url('${slides[index].dataset.bg}')`;
+  }
   slides[index].classList.add("active");
 }
 

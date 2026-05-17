@@ -103,22 +103,27 @@ LOCAL SEO GEO TAGS
     <!-- Google Fonts Css-->
     <link rel="preconnect" href="https://fonts.googleapis.com/" />
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
-    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="preload" href="css/footer.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="css/footer.css" /></noscript>
     <link rel="stylesheet" href="css/slider.css?v=2" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Marcellus&amp;family=Sora:wght@100..800&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=Marcellus&amp;family=Sora:wght@400;500;600;700&amp;display=swap"
       rel="stylesheet"
     />
     <!-- Bootstrap Css -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen" />
+    <link rel="preload" href="css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link href="css/bootstrap.min.css" rel="stylesheet" /></noscript>
     <!-- SlickNav Css -->
     <link href="css/slicknav.min.css" rel="stylesheet" />
     <!-- Font Awesome Icon Css-->
-    <link href="css/all.min.css" rel="stylesheet" media="screen" />
+    <link rel="preload" href="css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link href="css/all.min.css" rel="stylesheet" /></noscript>
     <!-- Animated Css -->
-    <link href="css/animate.css" rel="stylesheet" />
+    <link rel="preload" href="css/animate.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link href="css/animate.css" rel="stylesheet" /></noscript>
     <!-- Mouse Cursor Css File -->
-    <link rel="stylesheet" href="css/mousecursor.css" />
+    <link rel="preload" href="css/mousecursor.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="css/mousecursor.css" /></noscript>
     <link rel="stylesheet" href="css/call.css?v=2" />
     <!-- Main Custom Css -->
     <link href="css/custom.css" rel="stylesheet" media="screen" />
@@ -304,7 +309,7 @@ LOCAL SEO GEO TAGS
       <!-- Slide 2 -->
       <div
         class="simple-slide"
-        style="background-image: url('images/sliders/2.webp')"
+        data-bg="images/sliders/2.webp"
       >
         <div class="slider-overlay"></div>
         <div class="slider-content">
@@ -1634,24 +1639,27 @@ LOCAL SEO GEO TAGS
     </footer>
     <!-- Footer End -->
 
-    <!-- Jquery Library File -->
+    <!-- Core interaction scripts only; desktop animation libraries are intentionally skipped on the homepage for mobile speed. -->
     <script src="js/jquery-3.7.1.min.js" defer></script>
-    <!-- Bootstrap js file -->
-    <script src="js/bootstrap.min.js" defer></script>
-    <!-- SlickNav js file -->
     <script src="js/jquery.slicknav.js" defer></script>
-    <!-- Parallax js -->
-    <script src="js/parallaxie.js" defer></script>
-    <!-- MagicCursor js file -->
-    <script src="js/gsap.min.js" defer></script>
-    <script src="js/magiccursor.js" defer></script>
-    <!-- Text Effect js file -->
-    <script src="js/SplitText.js" defer></script>
-    <script src="js/ScrollTrigger.min.js" defer></script>
-    <!-- Wow js file -->
-    <script src="js/wow.min.js" defer></script>
-    <!-- Main Custom js file -->
     <script src="js/function.js" defer></script>
     <script src="js/slider.js" defer></script>
+    <script>
+      window.addEventListener("load", function () {
+        var loadDeferred = function () {
+          ["js/bootstrap.min.js"].forEach(function (src) {
+            var script = document.createElement("script");
+            script.src = src;
+            script.defer = true;
+            document.body.appendChild(script);
+          });
+        };
+        if ("requestIdleCallback" in window) {
+          requestIdleCallback(loadDeferred, { timeout: 2500 });
+        } else {
+          setTimeout(loadDeferred, 1200);
+        }
+      });
+    </script>
   </body>
 </html>

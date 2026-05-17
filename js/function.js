@@ -42,22 +42,24 @@
 	}
 
 	/* Hero Slider Layout JS */
-	const hero_slider_layout = new Swiper('.hero-slider-layout .swiper', {
-		slidesPerView : 1,
-		speed: 1000,
-		spaceBetween: 0,
-		loop: true,
-		autoplay: {
-			delay: 4000,
-		},
-		pagination: {
-			el: '.hero-pagination',
-			clickable: true,
-		},
-	});
+	if (typeof Swiper !== 'undefined' && $('.hero-slider-layout .swiper').length) {
+		const hero_slider_layout = new Swiper('.hero-slider-layout .swiper', {
+			slidesPerView : 1,
+			speed: 1000,
+			spaceBetween: 0,
+			loop: true,
+			autoplay: {
+				delay: 4000,
+			},
+			pagination: {
+				el: '.hero-pagination',
+				clickable: true,
+			},
+		});
+	}
 
 	/* testimonial Slider JS */
-	if ($('.testimonial-slider').length) {
+	if (typeof Swiper !== 'undefined' && $('.testimonial-slider').length) {
 		const testimonial_slider = new Swiper('.testimonial-slider .swiper', {
 			slidesPerView : 1,
 			speed: 1000,
@@ -86,7 +88,7 @@
 	}
 
 	/* testimonial Company Slider JS */
-	if ($('.testimonial-company-slider').length) {
+	if (typeof Swiper !== 'undefined' && $('.testimonial-company-slider').length) {
 		const testimonial_company_slider = new Swiper('.testimonial-company-slider .swiper', {
 			slidesPerView : 2,
 			speed: 2000,
@@ -130,7 +132,7 @@
 	}
 
 	/* Image Reveal Animation */
-	if ($('.reveal').length) {
+	if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined' && $('.reveal').length) {
         gsap.registerPlugin(ScrollTrigger);
         let revealContainers = document.querySelectorAll(".reveal");
         revealContainers.forEach((container) => {
@@ -158,7 +160,7 @@
     }
 
 	/* Text Effect Animation */
-	if ($('.text-anime-style-1').length) {
+	if (typeof gsap !== 'undefined' && typeof SplitText !== 'undefined' && typeof ScrollTrigger !== 'undefined' && $('.text-anime-style-1').length) {
 		let staggerAmount 	= 0.05,
 			translateXValue = 0,
 			delayValue 		= 0.5,
@@ -177,7 +179,7 @@
 		});		
 	}
 	
-	if ($('.text-anime-style-2').length) {				
+	if (typeof gsap !== 'undefined' && typeof SplitText !== 'undefined' && typeof ScrollTrigger !== 'undefined' && $('.text-anime-style-2').length) {				
 		let	 staggerAmount 		= 0.03,
 			 translateXValue	= 20,
 			 delayValue 		= 0.1,
@@ -198,7 +200,7 @@
 		});		
 	}
 	
-	if ($('.text-anime-style-3').length) {		
+	if (typeof gsap !== 'undefined' && typeof SplitText !== 'undefined' && typeof ScrollTrigger !== 'undefined' && $('.text-anime-style-3').length) {		
 		let	animatedTextElements = document.querySelectorAll('.text-anime-style-3');
 		
 		 animatedTextElements.forEach((element) => {
@@ -234,7 +236,7 @@
 
 	/* Parallaxie js */
 	var $parallaxie = $('.parallaxie');
-	if($parallaxie.length && ($window.width() > 991))
+	if($.fn.parallaxie && $parallaxie.length && ($window.width() > 991))
 	{
 		if ($window.width() > 768) {
 			$parallaxie.parallaxie({
@@ -245,35 +247,39 @@
 	}
 
 	/* Zoom Gallery screenshot */
-	$('.gallery-items').magnificPopup({
-		delegate: 'a',
-		type: 'image',
-		closeOnContentClick: false,
-		closeBtnInside: false,
-		mainClass: 'mfp-with-zoom',
-		image: {
-			verticalFit: true,
-		},
-		gallery: {
-			enabled: true
-		},
-		zoom: {
-			enabled: true,
-			duration: 300, // don't foget to change the duration also in CSS
-			opener: function(element) {
-			  return element.find('img');
+	if ($.fn.magnificPopup && $('.gallery-items').length) {
+		$('.gallery-items').magnificPopup({
+			delegate: 'a',
+			type: 'image',
+			closeOnContentClick: false,
+			closeBtnInside: false,
+			mainClass: 'mfp-with-zoom',
+			image: {
+				verticalFit: true,
+			},
+			gallery: {
+				enabled: true
+			},
+			zoom: {
+				enabled: true,
+				duration: 300,
+				opener: function(element) {
+				  return element.find('img');
+				}
 			}
-		}
-	});
+		});
+	}
 
 	/* Contact form validation */
 	var $contactform = $("#contactForm");
+	if ($.fn.validator && $contactform.length) {
 	$contactform.validator({focus: false}).on("submit", function (event) {
 		if (!event.isDefaultPrevented()) {
 			event.preventDefault();
 			submitForm();
 		}
 	});
+	}
 
 	function submitForm(){
 		/* Ajax call to submit form */
@@ -311,12 +317,14 @@
 
 	/* Appointment form validation */
 	var $appointmentForm = $("#appointmentForm");
+	if ($.fn.validator && $appointmentForm.length) {
 	$appointmentForm.validator({focus: false}).on("submit", function (event) {
 		if (!event.isDefaultPrevented()) {
 			event.preventDefault();
 			submitappointmentForm();
 		}
 	});
+	}
 
 	function submitappointmentForm(){
 		/* Ajax call to submit form */
@@ -353,10 +361,12 @@
 	/* Appointment form validation end */
 
 	/* Animated Wow Js */	
-	new WOW().init();
+	if (typeof WOW !== 'undefined') {
+		new WOW().init();
+	}
 
 	/* Popup Video */
-	if ($('.popup-video').length) {
+	if ($.fn.magnificPopup && $('.popup-video').length) {
 		$('.popup-video').magnificPopup({
 			type: 'iframe',
 			mainClass: 'mfp-fade',
