@@ -124,8 +124,7 @@ LOCAL SEO GEO TAGS
     <!-- SlickNav Css -->
     <link rel="stylesheet" href="css/slicknav.min.css" media="print" onload="this.media='all'" />
     <noscript><link href="css/slicknav.min.css" rel="stylesheet" /></noscript>
-    <!-- Font Awesome Icon Css-->
-    <link rel="stylesheet" href="css/all.min.css" media="print" onload="this.media='all'" />
+    <!-- Font Awesome is below-the-fold only on the homepage; idle-loaded for mobile performance. -->
     <noscript><link href="css/all.min.css" rel="stylesheet" /></noscript>
     <link rel="stylesheet" href="css/call.css?v=2" />
     <!-- Main Custom Css: loaded async after the first viewport can paint -->
@@ -220,6 +219,30 @@ LOCAL SEO GEO TAGS
       .navbar-toggle {
         display: none;
       }
+      .skip-link {
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        z-index: 100000;
+        transform: translateY(-140%);
+        padding: 10px 14px;
+        border-radius: 8px;
+        background: #fff;
+        color: #123c69;
+        font-weight: 700;
+        text-decoration: none;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+      }
+      .skip-link:focus {
+        transform: translateY(0);
+        outline: 3px solid #2a65ac;
+        outline-offset: 2px;
+      }
+      a:focus-visible,
+      button:focus-visible {
+        outline: 3px solid #2a65ac;
+        outline-offset: 3px;
+      }
       .slide-1 .slider-content-mobile {
         display: none !important;
         visibility: hidden !important;
@@ -241,7 +264,9 @@ LOCAL SEO GEO TAGS
           height: 38px;
           border-radius: 8px;
           background: var(--accent-color);
+          border: 0;
           position: relative;
+          cursor: pointer;
         }
         .navbar-toggle::before {
           content: "";
@@ -252,6 +277,29 @@ LOCAL SEO GEO TAGS
         }
         .responsive-menu {
           display: block;
+        }
+        header.mobile-menu-open .navbar-collapse {
+          display: block !important;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          z-index: 110;
+          background: #fff;
+          border-bottom: 1px solid #e5e7eb;
+          box-shadow: 0 14px 30px rgba(15, 23, 42, 0.12);
+        }
+        header.mobile-menu-open .main-menu .nav-menu-wrapper {
+          margin: 0;
+          text-align: left;
+        }
+        header.mobile-menu-open .navbar-nav {
+          display: block;
+          padding: 8px 12px 12px;
+        }
+        header.mobile-menu-open .nav-link {
+          padding: 12px 4px;
+          min-height: 44px;
         }
         .slide-1 .slider-content-desktop {
           display: none !important;
@@ -296,6 +344,7 @@ LOCAL SEO GEO TAGS
   </head>
 
   <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <!-- Preloader Start -->
     <div class="preloader">
       <div class="loading-container">
@@ -313,8 +362,8 @@ LOCAL SEO GEO TAGS
         <nav class="navbar navbar-expand-lg">
           <div class="container">
             <!-- Logo Start -->
-            <a class="navbar-brand" href="https://drranjithneuro.com/">
-              <img decoding="async" src="images/doctor-img/Dr Ranjith.png" alt="dr-ranjith-neurologist-hyderabad-Logo" width="400" height="100%" fetchpriority="high" />
+            <a class="navbar-brand" href="https://drranjithneuro.com/" aria-label="Dr. Ranjith G home">
+              <img decoding="async" src="images/doctor-img/Dr Ranjith.png" alt="Dr. Ranjith G Neurologist logo" width="400" height="124" fetchpriority="high" />
             </a>
             <!-- Logo End -->
 
@@ -364,7 +413,13 @@ LOCAL SEO GEO TAGS
               <!-- Header Btn End -->
             </div>
             <!-- Main Menu End -->
-            <div class="navbar-toggle"></div>
+            <button
+              class="navbar-toggle"
+              type="button"
+              aria-label="Open navigation menu"
+              aria-controls="menu"
+              aria-expanded="false"
+            ></button>
           </div>
         </nav>
         <div class="responsive-menu"></div>
@@ -372,6 +427,7 @@ LOCAL SEO GEO TAGS
     </header>
     <!-- Header End -->
 
+    <main id="main-content">
     <!-- Hero Section Start -->
     <div class="simple-slider">
       <!-- Slide 1 -->
@@ -1175,8 +1231,8 @@ LOCAL SEO GEO TAGS
     <!-- Why Choose Us Section End -->
     <!-- Sticky Book Appointment Button -->
     <!-- Sticky Call Us Button (right side, visible on load) -->
-    <a href="tel:+919848999917" class="sticky-call-btn">
-      <span>📞</span> Call Us
+    <a href="tel:+919848999917" class="sticky-call-btn" aria-label="Call Dr. Ranjith Neurology clinic at +91 98489 99917">
+      <span aria-hidden="true">Call</span>
     </a>
 
     <!-- How It Work Section Start -->
@@ -1540,6 +1596,7 @@ LOCAL SEO GEO TAGS
       </div>
     </div>
     <!-- Our FAQs Section End -->
+    </main>
 
     <!-- Footer CTA Box Start -->
     <div class="footer-cta-box">
@@ -1579,8 +1636,8 @@ LOCAL SEO GEO TAGS
                 Book an Appointment</a
               >
 -->
-              <a href="tel:+919848999917" class="sticky-call-btn">
-                <span>📞</span> Call Us
+              <a href="tel:+919848999917" class="sticky-call-btn" aria-label="Call Dr. Ranjith Neurology clinic at +91 98489 99917">
+                <span aria-hidden="true">Call</span>
               </a>
             </div>
             <!-- Footer CTA Button End -->
@@ -1644,35 +1701,33 @@ LOCAL SEO GEO TAGS
                 <!-- Footer Contact Item Start -->
 
                 <div class="footer-contact-item">
-                  <div class="footer-contact-item">
-                    <p><i aria-hidden="true" class="fa-solid fa-location-dot"></i> Location</p>
-                    <h6 class="lenk">
-                      <a
-                        href="https://www.google.com/maps/search/?api=1&query=AB+Skin+and+Neuro+Centre,+Sree+Nidhi+Towers,+2nd+Floor,+Block-A,+Plot-14,+Alkapuri,+Near+Neknampur,+Manikonda,+Hyderabad"
-                        target="_blank"
-                      >
-                        Apollo Hospitals, Financial District
-                      </a>
-                      <br />
-                      <br />
-                      <h6>Appointment Timings</h6>
-                      <p>09:00AM To 05:00PM</p>
-                    </h6>
-                  </div>
                   <p><i aria-hidden="true" class="fa-solid fa-location-dot"></i> Location</p>
-                  <h6 class="lenk">
+                  <div class="lenk footer-location-block">
+                    <a
+                      href="https://www.google.com/maps/search/?api=1&query=AB+Skin+and+Neuro+Centre,+Sree+Nidhi+Towers,+2nd+Floor,+Block-A,+Plot-14,+Alkapuri,+Near+Neknampur,+Manikonda,+Hyderabad"
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      Apollo Hospitals, Financial District
+                    </a>
+                    <p class="footer-timing-label">Appointment Timings</p>
+                    <p>09:00AM To 05:00PM</p>
+                  </div>
+                </div>
+
+                <div class="footer-contact-item">
+                  <p><i aria-hidden="true" class="fa-solid fa-location-dot"></i> Location</p>
+                  <div class="lenk footer-location-block">
                     <a
                       href="https://maps.app.goo.gl/UPAbY7cPs6s9LFo78"
                       target="_blank"
+                      rel="noopener"
                     >
                       AB Neuro Centre, Manikonda
                     </a>
-                    <br />
-                    <br />
-                    <h6>Appointment Timings</h6>
+                    <p class="footer-timing-label">Appointment Timings</p>
                     <p>06:00AM To 09:00PM</p>
-                  </h6>
-                  <br />
+                  </div>
                 </div>
 
                 <!-- Footer Contact Item End -->
@@ -1696,12 +1751,12 @@ LOCAL SEO GEO TAGS
                 </li>
 
                 <li>
-                  <a aria-label="Facebook" href="https://www.facebook.com/share/1Aci3jJTnA/"
+                  <a aria-label="Facebook" href="https://www.facebook.com/share/1Aci3jJTnA/" target="_blank" rel="noopener"
                     ><i aria-hidden="true" class="fa-brands fa-facebook-f"></i
                   ></a>
                 </li>
                 <li>
-                  <a aria-label="Instagram" href="https://www.instagram.com/dr.ranjith_neurologist"
+                  <a aria-label="Instagram" href="https://www.instagram.com/dr.ranjith_neurologist" target="_blank" rel="noopener"
                     ><i aria-hidden="true" class="fa-brands fa-instagram"></i
                   ></a>
                 </li>
@@ -1758,7 +1813,23 @@ LOCAL SEO GEO TAGS
     <!-- Keep the hero controls tiny and immediate; load the heavier interaction bundle after first paint. -->
     <script src="js/slider.js" defer></script>
     <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var toggle = document.querySelector(".navbar-toggle");
+        var header = document.querySelector(".main-header");
+        if (!toggle || !header) return;
+        toggle.addEventListener("click", function () {
+          var isOpen = header.classList.toggle("mobile-menu-open");
+          toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+          toggle.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
+        });
+      });
       window.addEventListener("load", function () {
+        var loadStyle = function (href) {
+          var link = document.createElement("link");
+          link.rel = "stylesheet";
+          link.href = href;
+          document.head.appendChild(link);
+        };
         var loadScript = function (src, done) {
           var script = document.createElement("script");
           script.src = src;
@@ -1768,10 +1839,9 @@ LOCAL SEO GEO TAGS
           document.body.appendChild(script);
         };
         var loadDeferred = function () {
+          loadStyle("css/all.min.css");
           loadScript("js/jquery-3.7.1.min.js", function () {
-            loadScript("js/jquery.slicknav.js", function () {
-              loadScript("js/function.js");
-            });
+            loadScript("js/function.js");
           });
           loadScript("js/bootstrap.min.js");
         };

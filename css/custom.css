@@ -151,6 +151,31 @@ a:focus{
 	outline: 0;
 }
 
+a:focus-visible,
+button:focus-visible{
+	outline: 3px solid var(--accent-color);
+	outline-offset: 3px;
+}
+
+.skip-link{
+	position: absolute;
+	top: 8px;
+	left: 8px;
+	z-index: 100000;
+	transform: translateY(-140%);
+	padding: 10px 14px;
+	border-radius: 8px;
+	background: var(--white-color);
+	color: var(--accent-color);
+	font-weight: 700;
+	text-decoration: none;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+.skip-link:focus{
+	transform: translateY(0);
+}
+
 html,
 body{
 	width: 100%;
@@ -6661,6 +6686,21 @@ html {
 
 .header-btn:empty {
   display: none !important;
+}
+
+.footer-location-block {
+  display: block;
+}
+
+.footer-location-block a {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.footer-timing-label {
+  margin: 8px 0 2px;
+  font-weight: 700;
+  color: var(--white-color);
 }
 
 h1,
