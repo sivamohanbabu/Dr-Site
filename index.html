@@ -103,14 +103,14 @@ LOCAL SEO GEO TAGS
     <!-- Google Fonts Css-->
     <link rel="preconnect" href="https://fonts.googleapis.com/" />
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
-    <link rel="preload" href="css/footer.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="stylesheet" href="css/footer.css" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="css/footer.css" /></noscript>
     <link rel="stylesheet" href="css/slider.css?v=2" />
     <link
-      rel="preload"
-      as="style"
+      rel="stylesheet"
+      media="print"
       href="https://fonts.googleapis.com/css2?family=Marcellus&amp;family=Sora:wght@400;500;600;700&amp;display=swap"
-      onload="this.onload=null;this.rel='stylesheet'"
+      onload="this.media='all'"
     />
     <noscript>
       <link
@@ -119,20 +119,107 @@ LOCAL SEO GEO TAGS
       />
     </noscript>
     <!-- Bootstrap Css -->
-    <link rel="preload" href="css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" media="print" onload="this.media='all'" />
     <noscript><link href="css/bootstrap.min.css" rel="stylesheet" /></noscript>
     <!-- SlickNav Css -->
-    <link rel="preload" href="css/slicknav.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="stylesheet" href="css/slicknav.min.css" media="print" onload="this.media='all'" />
     <noscript><link href="css/slicknav.min.css" rel="stylesheet" /></noscript>
     <!-- Font Awesome Icon Css-->
-    <link rel="preload" href="css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="stylesheet" href="css/all.min.css" media="print" onload="this.media='all'" />
     <noscript><link href="css/all.min.css" rel="stylesheet" /></noscript>
     <link rel="stylesheet" href="css/call.css?v=2" />
-    <!-- Main Custom Css -->
-    <link href="css/custom.css" rel="stylesheet" media="screen" />
+    <!-- Main Custom Css: loaded async after the first viewport can paint -->
+    <link rel="stylesheet" href="css/custom.css?v=3" media="print" onload="this.media='all'" />
+    <noscript><link href="css/custom.css?v=3" rel="stylesheet" media="screen" /></noscript>
    
-    <!-- Critical: ensure single content on hero (works even if slider.css is cached) -->
+    <!-- Critical first-viewport CSS for mobile PageSpeed. Full CSS loads asynchronously above. -->
     <style>
+      :root {
+        --primary-color: #262626;
+        --text-color: #5f6368;
+        --accent-color: rgb(42, 101, 172);
+        --white-color: #fff;
+        --dark-divider-color: #ffffff1a;
+      }
+      html,
+      body {
+        width: 100%;
+        margin: 0;
+        overflow-x: clip;
+        background: #fff;
+        color: var(--text-color);
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+      .preloader,
+      .header-btn:empty {
+        display: none !important;
+      }
+      .container {
+        width: min(100% - 30px, 1300px);
+        margin-inline: auto;
+      }
+      header.main-header {
+        position: relative;
+        z-index: 100;
+        border-bottom: 1px solid var(--dark-divider-color);
+        background: #fff;
+      }
+      .header-sticky {
+        position: relative;
+        z-index: 100;
+      }
+      .navbar {
+        min-height: 62px;
+        padding: 8px 0;
+        display: flex;
+        align-items: center;
+      }
+      .navbar > .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .navbar-brand {
+        display: inline-flex;
+        align-items: center;
+        width: clamp(150px, 18vw, 200px);
+        flex: 0 0 auto;
+      }
+      .navbar-brand img {
+        display: block;
+        width: 100%;
+        max-width: 220px;
+        height: auto;
+      }
+      .navbar-collapse {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex: 1 1 auto;
+      }
+      .navbar-nav {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .nav-link {
+        display: block;
+        padding: 12px 14px;
+        color: #0f0f0f;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .responsive-menu,
+      .navbar-toggle {
+        display: none;
+      }
       .slide-1 .slider-content-mobile {
         display: none !important;
         visibility: hidden !important;
@@ -140,6 +227,32 @@ LOCAL SEO GEO TAGS
         overflow: hidden !important;
       }
       @media (max-width: 768px) {
+        .container {
+          width: min(100% - 24px, 1300px);
+        }
+        .navbar-collapse {
+          display: none !important;
+        }
+        .navbar-toggle {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 38px;
+          height: 38px;
+          border-radius: 8px;
+          background: var(--accent-color);
+          position: relative;
+        }
+        .navbar-toggle::before {
+          content: "";
+          width: 20px;
+          height: 14px;
+          border-block: 3px solid #fff;
+          box-shadow: 0 5.5px 0 #fff;
+        }
+        .responsive-menu {
+          display: block;
+        }
         .slide-1 .slider-content-desktop {
           display: none !important;
           visibility: hidden !important;
@@ -1642,25 +1755,30 @@ LOCAL SEO GEO TAGS
     </footer>
     <!-- Footer End -->
 
-    <!-- Core interaction scripts only; desktop animation libraries are intentionally skipped on the homepage for mobile speed. -->
-    <script src="js/jquery-3.7.1.min.js" defer></script>
-    <script src="js/jquery.slicknav.js" defer></script>
-    <script src="js/function.js" defer></script>
+    <!-- Keep the hero controls tiny and immediate; load the heavier interaction bundle after first paint. -->
     <script src="js/slider.js" defer></script>
     <script>
       window.addEventListener("load", function () {
+        var loadScript = function (src, done) {
+          var script = document.createElement("script");
+          script.src = src;
+          script.async = false;
+          script.defer = true;
+          script.onload = done || null;
+          document.body.appendChild(script);
+        };
         var loadDeferred = function () {
-          ["js/bootstrap.min.js"].forEach(function (src) {
-            var script = document.createElement("script");
-            script.src = src;
-            script.defer = true;
-            document.body.appendChild(script);
+          loadScript("js/jquery-3.7.1.min.js", function () {
+            loadScript("js/jquery.slicknav.js", function () {
+              loadScript("js/function.js");
+            });
           });
+          loadScript("js/bootstrap.min.js");
         };
         if ("requestIdleCallback" in window) {
-          requestIdleCallback(loadDeferred, { timeout: 2500 });
+          requestIdleCallback(loadDeferred, { timeout: 1600 });
         } else {
-          setTimeout(loadDeferred, 1200);
+          setTimeout(loadDeferred, 900);
         }
       });
     </script>
