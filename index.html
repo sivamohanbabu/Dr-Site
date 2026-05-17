@@ -100,18 +100,9 @@ LOCAL SEO GEO TAGS
       type="image/x-icon"
       href="images/doctor-img/favicon.svg"
     />
-    <!-- Google Fonts Css-->
-    <link rel="preconnect" href="https://fonts.googleapis.com/" />
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
     <link rel="stylesheet" href="css/footer.css" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="css/footer.css" /></noscript>
     <link rel="stylesheet" href="css/slider.css?v=2" />
-    <link
-      rel="stylesheet"
-      media="print"
-      href="https://fonts.googleapis.com/css2?family=Marcellus&amp;family=Sora:wght@400;500;600;700&amp;display=swap"
-      onload="this.media='all'"
-    />
     <noscript>
       <link
         href="https://fonts.googleapis.com/css2?family=Marcellus&amp;family=Sora:wght@400;500;600;700&amp;display=swap"
@@ -121,9 +112,6 @@ LOCAL SEO GEO TAGS
     <!-- Bootstrap Css -->
     <link rel="stylesheet" href="css/bootstrap.min.css" media="print" onload="this.media='all'" />
     <noscript><link href="css/bootstrap.min.css" rel="stylesheet" /></noscript>
-    <!-- SlickNav Css -->
-    <link rel="stylesheet" href="css/slicknav.min.css" media="print" onload="this.media='all'" />
-    <noscript><link href="css/slicknav.min.css" rel="stylesheet" /></noscript>
     <!-- Font Awesome is below-the-fold only on the homepage; idle-loaded for mobile performance. -->
     <noscript><link href="css/all.min.css" rel="stylesheet" /></noscript>
     <link rel="stylesheet" href="css/call.css?v=2" />
@@ -359,7 +347,7 @@ LOCAL SEO GEO TAGS
     <!-- Header Start -->
     <header class="main-header r-sticky-header">
       <div class="header-sticky">
-        <nav class="navbar navbar-expand-lg">
+        <nav class="navbar navbar-expand-lg" aria-label="Primary navigation">
           <div class="container">
             <!-- Logo Start -->
             <a class="navbar-brand" href="https://drranjithneuro.com/" aria-label="Dr. Ranjith G home">
@@ -431,10 +419,17 @@ LOCAL SEO GEO TAGS
     <!-- Hero Section Start -->
     <div class="simple-slider">
       <!-- Slide 1 -->
-      <div
-        class="simple-slide active slide-1"
-        style="background-image: url('images/sliders/4.webp')"
-      >
+      <div class="simple-slide active slide-1">
+        <img
+          class="slide-bg"
+          src="images/sliders/4.webp"
+          alt=""
+          width="1200"
+          height="700"
+          fetchpriority="high"
+          decoding="async"
+          aria-hidden="true"
+        />
         <div class="slider-overlay"></div>
         <!-- Desktop: Slide 1 content -->
         <div class="slider-content slider-content-desktop">
@@ -460,7 +455,7 @@ LOCAL SEO GEO TAGS
         </div>
         <!-- Mobile: Slide 1 content (friendly stacked layout) -->
         <div class="slider-content slider-content-mobile">
-          <h2 class="slider-mobile-name">Dr. Ranjith G</h2>
+          <h1 class="slider-mobile-name">Dr. Ranjith G</h1>
           <p class="slider-mobile-degree">MD (Gen Med), DM (Neuro)</p>
           <p class="slider-mobile-fellowship">Post Doctoral Fellow in</p>
           <p class="slider-mobile-specialty">
@@ -1839,6 +1834,7 @@ LOCAL SEO GEO TAGS
           document.body.appendChild(script);
         };
         var loadDeferred = function () {
+          loadStyle("https://fonts.googleapis.com/css2?family=Marcellus&family=Sora:wght@400;500;600;700&display=swap");
           loadStyle("css/all.min.css");
           loadScript("js/jquery-3.7.1.min.js", function () {
             loadScript("js/function.js");

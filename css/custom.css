@@ -6777,4 +6777,27 @@ li {
     flex-wrap: wrap;
     overflow-x: visible;
   }
+
+  .nav-link,
+  .btn-default,
+  .sticky-call-btn,
+  .footer-menu a,
+  .clinic a,
+  .footer-social-links a,
+  .footer-contact-item a {
+    min-height: 48px;
+    min-width: 48px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .footer-social-links a {
+    justify-content: center;
+  }
+
+  .footer-menu ul,
+  .footer-social-links ul,
+  .clinic {
+    gap: 10px;
+  }
 }
