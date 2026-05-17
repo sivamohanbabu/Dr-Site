@@ -6634,3 +6634,102 @@ html {
   scroll-margin-top: 170px;
 }
 /* Smooth  proceduress scrolling for ends */
+
+/* Performance and responsive stability pass */
+.preloader {
+  display: none !important;
+}
+
+.navbar-brand {
+  display: inline-flex;
+  align-items: center;
+  width: clamp(150px, 18vw, 200px);
+  height: auto;
+}
+
+.navbar-brand img,
+.footer-logo img {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+}
+
+.header-btn:empty {
+  display: none !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+li {
+  overflow-wrap: anywhere;
+}
+
+.service-item,
+.procedure-item,
+.blog-item,
+.testimonial-item,
+.contact-info-item,
+.footer-contact-item {
+  min-width: 0;
+}
+
+.book-appointment-btn {
+  display: none !important;
+}
+
+@media only screen and (max-width: 991px) {
+  .navbar-brand {
+    width: 160px;
+  }
+
+  .header-btn {
+    display: none !important;
+  }
+
+  .footer-contact-box {
+    align-items: flex-start;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  body {
+    font-size: 15px;
+  }
+
+  .container,
+  .container-fluid,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl,
+  .container-xxl {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .section-title h1,
+  .section-title h2,
+  .page-header-box h1 {
+    font-size: clamp(30px, 9vw, 42px);
+    line-height: 1.15;
+  }
+
+  .footer-contact-item h3,
+  .footer-contact-item h6,
+  .footer-copyright-text,
+  .clinic {
+    text-align: left;
+  }
+
+  .clinic {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    overflow-x: visible;
+  }
+}
