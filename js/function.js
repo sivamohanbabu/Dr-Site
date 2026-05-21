@@ -278,33 +278,9 @@
 	$contactform.validator({focus: false}).on("submit", function (event) {
 		if (!event.isDefaultPrevented()) {
 			event.preventDefault();
-			submitForm();
+			submitMSG(false, "Online form submission is unavailable. Please call +91 98489 99917.");
 		}
 	});
-	}
-
-	function submitForm(){
-		/* Ajax call to submit form */
-		$.ajax({
-			type: "POST",
-			url: "form-process.php",
-			data: $contactform.serialize(),
-			success : function(text){
-				if (text === "success"){
-					formSuccess();
-				} else {
-					submitMSG(false,text);
-				}
-			},
-			error : function(){
-				submitMSG(false, "Message could not be sent. Please call +91 98489 99917.");
-			}
-		});
-	}
-
-	function formSuccess(){
-		$contactform[0].reset();
-		submitMSG(true, "Message Sent Successfully!")
 	}
 
 	function submitMSG(valid, msg){
@@ -323,33 +299,9 @@
 	$appointmentForm.validator({focus: false}).on("submit", function (event) {
 		if (!event.isDefaultPrevented()) {
 			event.preventDefault();
-			submitappointmentForm();
+			appointmentsubmitMSG(false, "Online appointment requests are unavailable. Please call +91 98489 99917.");
 		}
 	});
-	}
-
-	function submitappointmentForm(){
-		/* Ajax call to submit form */
-		$.ajax({
-			type: "POST",
-			url: "form-appointment.php",
-			data: $appointmentForm.serialize(),
-			success : function(text){
-				if (text === "success"){
-					appointmentformSuccess();
-				} else {
-					appointmentsubmitMSG(false,text);
-				}
-			},
-			error : function(){
-				appointmentsubmitMSG(false, "Appointment request could not be sent. Please call +91 98489 99917.");
-			}
-		});
-	}
-
-	function appointmentformSuccess(){
-		$appointmentForm[0].reset();
-		appointmentsubmitMSG(true, "Message Sent Successfully!")
 	}
 
 	function appointmentsubmitMSG(valid, msg){
