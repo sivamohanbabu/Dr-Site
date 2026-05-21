@@ -4757,6 +4757,13 @@ header.main-header .header-sticky.active::before{
 
 .google-map-iframe{
     position: relative;
+    overflow: hidden;
+}
+
+.google-map-fallback{
+    position: relative;
+    height: 100%;
+    width: 100%;
 }
 
 .google-map-iframe gmpx-store-locator{
@@ -4785,6 +4792,8 @@ header.main-header .header-sticky.active::before{
 }
 
 .google-map-iframe iframe{
+    display: block;
+    border: 0;
     filter: grayscale(1);
     transition: all 0.4s ease-in-out;
 }
@@ -5842,7 +5851,9 @@ header.main-header .header-sticky.active::before{
     }
 
     .google-map-iframe,
-	.google-map-iframe iframe{
+	.google-map-iframe iframe,
+    .google-map-fallback,
+    .google-map-iframe gmpx-store-locator{
 		height: 450px;
 	}
 
@@ -6630,8 +6641,30 @@ header.main-header .header-sticky.active::before{
     }
 
     .google-map-iframe,
-	.google-map-iframe iframe{
+	.google-map-iframe iframe,
+    .google-map-fallback,
+    .google-map-iframe gmpx-store-locator{
         height: 350px;
+    }
+
+    .google-map-iframe{
+        min-height: 350px;
+    }
+
+    .map-location-links{
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        gap: 8px;
+    }
+
+    .map-location-links a{
+        flex: 1 1 150px;
+        justify-content: center;
+        min-height: 42px;
+        padding: 9px 10px;
+        font-size: 12px;
+        text-align: center;
     }
 
 }
@@ -6894,6 +6927,47 @@ li {
   .footer-contact-box,
   .contact-info-box {
     grid-template-columns: 1fr;
+  }
+
+  .google-map,
+  .google-map-iframe,
+  .google-map-fallback,
+  .google-map-iframe iframe,
+  .google-map-iframe gmpx-store-locator {
+    display: block;
+    width: 100%;
+  }
+
+  .google-map-iframe,
+  .google-map-fallback,
+  .google-map-iframe iframe {
+    height: 380px;
+    min-height: 380px;
+  }
+
+  .google-map-iframe gmpx-store-locator {
+    height: 520px;
+    min-height: 520px;
+  }
+
+  .google-map-iframe iframe {
+    max-width: 100%;
+  }
+
+  .map-location-links {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    gap: 8px;
+  }
+
+  .map-location-links a {
+    flex: 1 1 150px;
+    justify-content: center;
+    min-height: 42px;
+    padding: 9px 10px;
+    font-size: 12px;
+    text-align: center;
   }
 
   .contact-info-item {
