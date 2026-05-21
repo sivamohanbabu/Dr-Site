@@ -305,28 +305,79 @@ LOCAL SEO GEO TAGS
     <script type="application/ld+json" id="abneuro-schema">
       {
         "@context": "https://schema.org",
-        "@type": ["MedicalClinic", "LocalBusiness"],
-        "name": "AB Neuro Centre",
-        "url": "https://drranjithneuro.com/",
-        "image": "https://drranjithneuro.com/images/drranjith.png",
-        "telephone": "+91 9848999917",
-        "email": "ranjith.g554@gmail.com",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Second Floor, Sy No 140, Block-A, Plot No 14, Sree Nidhi Towers, Alkapuri, Near Neknampur, Manikonda",
-          "addressLocality": "Hyderabad",
-          "addressRegion": "Telangana",
-          "postalCode": "500089",
-          "addressCountry": "IN"
-        },
-        "medicalSpecialty": ["Neurology", "Stroke Care", "Epilepsy Care", "Migraine Treatment"],
-        "founder": {
-          "@type": "Physician",
-          "name": "Dr. Ranjith G",
-          "medicalSpecialty": "Neurology"
-        },
-        "areaServed": ["Manikonda", "Puppalguda", "Shaikpet", "Narsingi", "Gachibowli", "Hyderabad"],
-        "sameAs": ["https://drranjithneuro.com/"]
+        "@graph": [
+          {
+            "@type": "Physician",
+            "@id": "https://drranjithneuro.com/#physician",
+            "name": "Dr. Ranjith G",
+            "url": "https://drranjithneuro.com/",
+            "image": "https://drranjithneuro.com/images/drranjith.png",
+            "telephone": "+91 9848999917",
+            "email": "ranjith.g554@gmail.com",
+            "medicalSpecialty": ["Neurology", "Interventional Neurology", "Stroke Care"],
+            "areaServed": ["Manikonda", "Puppalguda", "Shaikpet", "Narsingi", "Gachibowli", "Financial District", "Hyderabad"],
+            "worksFor": [
+              { "@id": "https://drranjithneuro.com/#ab-neuro-centre" },
+              { "@id": "https://drranjithneuro.com/#apollo-financial-district" }
+            ]
+          },
+          {
+            "@type": ["MedicalClinic", "LocalBusiness"],
+            "@id": "https://drranjithneuro.com/#ab-neuro-centre",
+            "name": "AB Neuro Centre - Dr. Ranjith G",
+            "url": "https://drranjithneuro.com/contact",
+            "image": "https://drranjithneuro.com/images/drranjith.png",
+            "telephone": "+91 9848999917",
+            "email": "ranjith.g554@gmail.com",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Second Floor, Sy No 140, Block-A, Plot No 14, Sree Nidhi Towers, Alkapuri, Near Neknampur, Manikonda",
+              "addressLocality": "Hyderabad",
+              "addressRegion": "Telangana",
+              "postalCode": "500089",
+              "addressCountry": "IN"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 17.3937627,
+              "longitude": 78.3755082
+            },
+            "hasMap": "https://www.google.com/maps/search/?api=1&query=AB+Neuro+Centre+Dr+Ranjith+G&query_place_id=ChIJJ4yLAhqRyzsROvKbLvFt_8Y",
+            "identifier": {
+              "@type": "PropertyValue",
+              "propertyID": "Google Place ID",
+              "value": "ChIJJ4yLAhqRyzsROvKbLvFt_8Y"
+            },
+            "medicalSpecialty": ["Neurology", "Stroke Care", "Epilepsy Care", "Migraine Treatment"],
+            "founder": { "@id": "https://drranjithneuro.com/#physician" },
+            "areaServed": ["Manikonda", "Puppalguda", "Shaikpet", "Narsingi", "Gachibowli", "Hyderabad"],
+            "sameAs": ["https://drranjithneuro.com/"]
+          },
+          {
+            "@type": ["Hospital", "MedicalClinic"],
+            "@id": "https://drranjithneuro.com/#apollo-financial-district",
+            "name": "Dr. Ranjith G - Apollo Hospitals, Financial District",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "D.No-2-105/6/SE, Financial District, Nanakramguda",
+              "addressLocality": "Hyderabad",
+              "addressRegion": "Telangana",
+              "addressCountry": "IN"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 17.4166565,
+              "longitude": 78.3551478
+            },
+            "hasMap": "https://www.google.com/maps/search/?api=1&query=Dr+Ranjith+G+Apollo+Hospitals+Financial+District&query_place_id=ChIJ34w33GGVyzsRF05c4tPr20M",
+            "identifier": {
+              "@type": "PropertyValue",
+              "propertyID": "Google Place ID",
+              "value": "ChIJ34w33GGVyzsRF05c4tPr20M"
+            },
+            "medicalSpecialty": ["Neurology", "Stroke Care", "Interventional Neurology"]
+          }
+        ]
       }
     </script>
   </head>
