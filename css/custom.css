@@ -4479,6 +4479,68 @@ header.main-header .header-sticky.active::before{
     max-width: 40px;
 }
 
+.google-review-section{
+    padding: 0 0 100px;
+}
+
+.google-review-slider{
+    position: relative;
+    overflow: hidden;
+}
+
+.google-review-card{
+    height: 100%;
+    padding: 30px;
+    border: 1px solid var(--divider-color);
+    border-radius: 8px;
+    background: var(--white-color);
+}
+
+.google-review-header{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.google-review-header h3{
+    font-size: 20px;
+    text-transform: capitalize;
+    margin-bottom: 5px;
+}
+
+.google-review-header p,
+.google-review-card > p{
+    margin: 0;
+}
+
+.google-review-stars{
+    margin-bottom: 15px;
+}
+
+.google-review-stars i{
+    color: var(--accent-color);
+    font-size: 14px;
+    margin-right: 2px;
+}
+
+.google-review-pagination{
+    position: relative;
+    margin-top: 24px;
+    text-align: center;
+}
+
+.google-review-pagination .swiper-pagination-bullet{
+    height: 10px;
+    width: 10px;
+    background: var(--accent-color);
+    opacity: 0.25;
+}
+
+.google-review-pagination .swiper-pagination-bullet-active{
+    opacity: 1;
+}
+
 /************************************/
 /***     28. Image Gallery css 	  ***/
 /************************************/

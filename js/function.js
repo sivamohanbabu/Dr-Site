@@ -89,6 +89,31 @@
 		});
 	}
 
+	/* Google Review Slider JS */
+	if (typeof Swiper !== 'undefined' && $('.google-review-slider .swiper').length) {
+		const google_review_slider = new Swiper('.google-review-slider .swiper', {
+			slidesPerView: 1,
+			speed: 900,
+			spaceBetween: 24,
+			loop: true,
+			autoplay: {
+				delay: 4500,
+			},
+			pagination: {
+				el: '.google-review-pagination',
+				clickable: true,
+			},
+			breakpoints: {
+				768: {
+					slidesPerView: 2,
+				},
+				991: {
+					slidesPerView: 3,
+				}
+			}
+		});
+	}
+
 	/* testimonial Company Slider JS */
 	if (typeof Swiper !== 'undefined' && $('.testimonial-company-slider').length) {
 		const testimonial_company_slider = new Swiper('.testimonial-company-slider .swiper', {
