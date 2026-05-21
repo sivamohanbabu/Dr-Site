@@ -39,8 +39,7 @@
 30. FAQs Page css
 31. Contact Us Page css
 32. Book Appointment Page cs
-33. 404 Error Page css
-34. Responsive css
+33. Responsive css
 -------------------------------------------------------------------------------------- */
 
 /************************************/
@@ -4774,37 +4773,7 @@ header.main-header .header-sticky.active::before{
 }
 
 /************************************/
-/***    33. 404 Error Page css 	  ***/
-/************************************/
-
-.error-page{
-	padding: 100px 0;
-}
-
-.error-page-image{
-	text-align: center;
-	margin-bottom: 80px;
-}
-
-.error-page-image img{
-	width: 100%;
-	max-width: 50%;
-}
-
-.error-page-content{
-	text-align: center;
-}
-
-.error-page-content .section-title{
-	margin-bottom: 20px;
-}
-
-.error-page-content-body p{
-	margin-bottom: 20px;
-}
-
-/************************************/
-/***      34. Responsive css      ***/
+/***      33. Responsive css      ***/
 /************************************/
 
 @media only screen and (max-width: 1024px){
@@ -5823,17 +5792,6 @@ header.main-header .header-sticky.active::before{
         padding: 50px 0;
     }
 
-	.error-page{
-		padding: 50px 0;
-	}
-	
-	.error-page-image{
-		margin-bottom: 40px;
-	}
-
-	.error-page-image img{
-		max-width: 80%;
-	}
 }
 
 @media only screen and (max-width: 767px){
@@ -6618,9 +6576,6 @@ header.main-header .header-sticky.active::before{
         height: 350px;
     }
 
-	.error-page-image{
-		margin-bottom: 20px;
-	}
 }
 /* Sticky Book Appointment Button */
 .book-appointment-btn {
@@ -6688,19 +6643,91 @@ html {
   display: none !important;
 }
 
-.footer-location-block {
-  display: block;
+.footer-contact-box {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 28px 36px;
 }
 
-.footer-location-block a {
+.footer-contact-item {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+}
+
+.footer-contact-item p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  line-height: 1.35;
+}
+
+.footer-contact-item h3,
+.footer-contact-item h6 {
+  margin: 0;
+  line-height: 1.45;
+}
+
+.footer-contact-item .lenk a {
   display: inline-block;
-  margin-bottom: 10px;
+}
+
+.footer-contact-item a[href^="tel:"],
+.footer-contact-item a[href*="wa.me/91"],
+.footer-cta-btn .btn-phone,
+.contact-info-box .contact-info-item:nth-child(2) .contact-info-content p {
+  overflow-wrap: normal;
+  word-break: keep-all;
+}
+
+.footer-contact-item a[href^="tel:"],
+.footer-contact-item a[href*="wa.me/91"] {
+  color: var(--primary-color);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.footer-cta-btn .btn-phone {
+  white-space: nowrap;
+}
+
+.footer-location-block {
+  display: grid;
+  gap: 6px;
+}
+
+.footer-location-block a,
+.footer-location-block p {
+  margin: 0;
 }
 
 .footer-timing-label {
-  margin: 8px 0 2px;
+  margin: 4px 0 0;
   font-weight: 700;
-  color: var(--white-color);
+  color: var(--primary-color);
+}
+
+.contact-info-item {
+  width: auto;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+}
+
+.contact-info-box {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+}
+
+.contact-info-content p + p {
+  margin-top: 6px;
+}
+
+.contact-info-box .contact-info-item:nth-child(2) .contact-info-content p {
+  font-weight: 600;
+  line-height: 1.5;
 }
 
 h1,
@@ -6738,7 +6765,12 @@ li {
   }
 
   .footer-contact-box {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: flex-start;
+  }
+
+  .contact-info-box {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -6799,5 +6831,29 @@ li {
   .footer-social-links ul,
   .clinic {
     gap: 10px;
+  }
+
+  .footer-contact-box,
+  .contact-info-box {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-info-item {
+    width: 100%;
+  }
+
+  .footer-contact-item a[href^="tel:"],
+  .footer-contact-item a[href*="wa.me/91"],
+  .contact-info-box .contact-info-item:nth-child(2) .contact-info-content p {
+    font-size: 17px;
+  }
+
+  .footer-cta-btn {
+    text-align: left;
+  }
+
+  .footer-cta-btn .btn-phone {
+    width: 100%;
+    justify-content: center;
   }
 }

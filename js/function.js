@@ -297,7 +297,7 @@
 				}
 			},
 			error : function(){
-				submitMSG(false, "Message could not be sent. Please call +91 9848999917.");
+				submitMSG(false, "Message could not be sent. Please call +91 98489 99917.");
 			}
 		});
 	}
@@ -342,7 +342,7 @@
 				}
 			},
 			error : function(){
-				appointmentsubmitMSG(false, "Appointment request could not be sent. Please call +91 9848999917.");
+				appointmentsubmitMSG(false, "Appointment request could not be sent. Please call +91 98489 99917.");
 			}
 		});
 	}
