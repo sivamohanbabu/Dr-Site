@@ -6989,3 +6989,34 @@ li {
     justify-content: center;
   }
 }
+
+@media only screen and (max-width: 480px) {
+  .google-map-iframe {
+    overflow: visible;
+  }
+
+  .google-map-iframe,
+  .google-map-fallback,
+  .google-map-iframe iframe {
+    height: 300px;
+    min-height: 300px;
+  }
+
+  .google-map-iframe gmpx-store-locator {
+    height: 460px;
+    min-height: 460px;
+  }
+
+  .map-location-links {
+    position: static;
+    padding: 8px 10px 0;
+    background: var(--white-color);
+  }
+
+  .map-location-links a {
+    flex-basis: 100%;
+    min-height: 40px;
+    font-size: 11px;
+    box-shadow: none;
+  }
+}
